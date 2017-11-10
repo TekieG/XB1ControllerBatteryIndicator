@@ -23,5 +23,11 @@ namespace XB1ControllerBatteryIndicator
         {
             InitializeComponent();
         }
+
+        private void DragWindows(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+                this.DragMove();
+        }
     }
 }

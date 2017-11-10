@@ -135,8 +135,8 @@
       <DependentUpon>SystemTrayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SystemTrayViewModel.cs" />
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="WindowBattery.xaml.cs">
+      <DependentUpon>WindowBattery.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -155,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
+    <Page Include="WindowBattery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

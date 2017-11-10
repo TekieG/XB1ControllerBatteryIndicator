@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Window1" Height="128" Width="128" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="None" Background="Black">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="108" Margin="10,10,10,10" />
+        <Image HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="108" Margin="10,10,10,10" MouseDown="DragWindows" />
     </Grid>
 </Window>
