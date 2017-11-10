@@ -11,15 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Interop;
+using System.Drawing;
 
 namespace XB1ControllerBatteryIndicator
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class WindowBattery : Window
     {
-        public Window1()
+        public WindowBattery()
         {
             InitializeComponent();
         }
@@ -30,9 +32,45 @@ namespace XB1ControllerBatteryIndicator
                 this.DragMove();
         }
 
-        private void UpdateImage(string icon)
-        {
+        //public void UpdateImage(string icon)
+        //{
+        //    Icon newIcon = null;
 
+        //    if (icon.Contains("full"))
+        //    {
+        //        newIcon = Properties.Resources.battery_full;
+        //    }
+        //    if (icon.Contains("medium"))
+        //    {
+        //        newIcon = Properties.Resources.battery_medium;
+        //    }
+        //    if (icon.Contains("low"))
+        //    {
+        //        newIcon = Properties.Resources.battery_low;
+        //    }
+        //    if (icon.Contains("empty"))
+        //    {
+        //        newIcon = Properties.Resources.battery_empty;
+        //    }
+        //    if (icon.Contains("connected"))
+        //    {
+        //        newIcon = Properties.Resources.battery_disconnected;
+        //    }
+        //    if (icon.Contains("wired"))
+        //    {
+        //        newIcon = Properties.Resources.battery_wired;
+        //    }
+        //    if (icon.Contains("unknown"))
+        //    {
+        //        newIcon = Properties.Resources.battery_unknown;
+        //    }
+
+        //    this.Icon = ConvertToImageSource(newIcon); 
+        //}
+
+        public static ImageSource ConvertToImageSource(Icon icon)
+        {
+            return Imaging.CreateBitmapSourceFromHIcon(icon.Handle, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
         }
     }
 }

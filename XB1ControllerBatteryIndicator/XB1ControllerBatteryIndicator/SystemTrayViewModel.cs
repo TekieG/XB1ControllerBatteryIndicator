@@ -13,6 +13,8 @@ namespace XB1ControllerBatteryIndicator
         private string _tooltipText;
         private bool balloon_shown = false;
         NotifyIcon balloon = new NotifyIcon();
+        WindowBattery batteryWin = new WindowBattery();
+        
 
         public SystemTrayViewModel()
         {
@@ -21,6 +23,7 @@ namespace XB1ControllerBatteryIndicator
             Thread th = new Thread(RefreshControllerState);
             th.IsBackground = true;
             th.Start();
+            
         }
 
         public string ActiveIcon
@@ -67,6 +70,7 @@ namespace XB1ControllerBatteryIndicator
                     {
                         TooltipText = $"Controller {_controller.UserIndex} - {batteryInfo.BatteryType}";
                         ActiveIcon = $"Resources/battery_{batteryInfo.BatteryType.ToString().ToLower()}.ico";
+                        //batteryWin.UpdateImage($"battery_{ batteryInfo.BatteryType.ToString().ToLower()}");
                     }
                     else
                     {

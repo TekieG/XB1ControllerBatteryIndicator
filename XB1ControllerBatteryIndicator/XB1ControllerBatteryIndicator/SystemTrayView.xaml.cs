@@ -42,7 +42,8 @@ namespace XB1ControllerBatteryIndicator
 
         private void OpenBatteryWin(object sender, RoutedEventArgs e)
         {
-
+            WindowBattery WinBattery = new WindowBattery();
+            WinBattery.Show();
         }
 
         private void CloseBatteryWin(object sender, RoutedEventArgs e)
