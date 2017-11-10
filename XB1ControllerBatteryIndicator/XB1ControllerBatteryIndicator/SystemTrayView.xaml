@@ -27,8 +27,9 @@
         reuse the same context menu (which is a resource) again (which will have its DataContext set to the old TaskbarIcon)
         -->
         <ContextMenu x:Shared="false" x:Key="MainSysTrayMenu">
-            <MenuItem Header="Show Battery Window" cal:Message.Attach="ShowBatteryWindow" IsCheckable="True" />
-            <MenuItem Header="Auto Startup" cal:Message.Attach="AutoStartup" IsCheckable="True" />
+            <MenuItem Header="Show Battery Window" cal:Message.Attach="ShowBatteryWindow" IsCheckable="True" Checked="OpenBatteryWin" Unchecked="CloseBatteryWin"/>
+            <MenuItem Header="Auto Startup" cal:Message.Attach="AutoStartup" IsCheckable="True" Checked="ShowAtStartup" Unchecked="DeleteStartup" />
+            <Separator/>
             <MenuItem Header="Exit" cal:Message.Attach="ExitApplication" />
         </ContextMenu>
 

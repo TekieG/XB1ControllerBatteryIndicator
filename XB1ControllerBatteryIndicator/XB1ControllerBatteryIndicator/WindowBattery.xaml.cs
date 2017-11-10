@@ -29,5 +29,10 @@ namespace XB1ControllerBatteryIndicator
             if (Mouse.LeftButton == MouseButtonState.Pressed)
                 this.DragMove();
         }
+
+        private void UpdateImage(string icon)
+        {
+
+        }
     }
 }
