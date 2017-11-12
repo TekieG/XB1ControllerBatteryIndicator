@@ -11,5 +11,28 @@ namespace XB1ControllerBatteryIndicator
         {
             InitializeComponent();
         }
+        BatteryWindow BattWin = new BatteryWindow();
+
+        private void ShowBatteryWin(object sender, RoutedEventArgs e)
+        {            
+            BattWin.Show();
+        }
+
+        private void CloseBatteryWin(object sender, RoutedEventArgs e)
+        {
+            BattWin.Close();
+        }
+
+        private void AutoStart(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveStartup(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
