@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XB1ControllerBatteryIndicator"
         mc:Ignorable="d"
-        Title="BatteryWindow" Height="128" Width="128" ResizeMode="NoResize" WindowStyle="None" Background="Black">
+        Title="BatteryWindow" Height="128" Width="128" ResizeMode="NoResize" WindowStyle="None" Background="Black" MouseDown="DragWindows">
     <Grid>
         <Image HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="108" Margin="10,10,0,0" Source="Resources\battery_unknown.ico"/>
     </Grid>
