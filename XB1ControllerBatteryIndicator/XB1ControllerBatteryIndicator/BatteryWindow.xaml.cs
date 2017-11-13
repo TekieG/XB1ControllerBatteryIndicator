@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
 using System.Drawing;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace XB1ControllerBatteryIndicator
 {
@@ -21,18 +23,24 @@ namespace XB1ControllerBatteryIndicator
     /// </summary>
     public partial class BatteryWindow : Window
     {
+        //private Button uiObject;
+
         public BatteryWindow()
         {
             InitializeComponent();
         }
 
+        // MAKES WINDOW DRAGGLE
         private void DragWindows(object sender, MouseButtonEventArgs e)
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
             {
                 this.DragMove();
-            }                
+            }
         }
+
+        
+
 
         public void UpdateImage(string icon)
         {
@@ -42,31 +50,37 @@ namespace XB1ControllerBatteryIndicator
             {
                 newIcon = Properties.Resources.battery_full;
             }
-            if (icon.Contains("medium"))
+            else if (icon.Contains("medium"))
             {
                 newIcon = Properties.Resources.battery_medium;
             }
-            if (icon.Contains("low"))
+            else if (icon.Contains("low"))
             {
                 newIcon = Properties.Resources.battery_low;
             }
-            if (icon.Contains("empty"))
+            else if (icon.Contains("empty"))
             {
                 newIcon = Properties.Resources.battery_empty;
             }
-            if (icon.Contains("connected"))
+            else if (icon.Contains("disconnected"))
             {
                 newIcon = Properties.Resources.battery_disconnected;
             }
-            if (icon.Contains("wired"))
+            else if (icon.Contains("wired"))
             {
                 newIcon = Properties.Resources.battery_wired;
             }
-            if (icon.Contains("unknown"))
+            else if (icon.Contains("unknown"))
             {
                 newIcon = Properties.Resources.battery_unknown;
             }
-            this.Icon = ConvertToImageSource(newIcon);
+            ImageSource WBI = ConvertToImageSource(newIcon);
+
+            // UPDATES IMAGE ACCORDING TO 'SystemTrayViewModel.cs'
+            BatteryImage.Dispatcher.Invoke(() =>
+            {
+                BatteryImage.Source = WBI;
+            });
         }
 
         public static ImageSource ConvertToImageSource(Icon icon)

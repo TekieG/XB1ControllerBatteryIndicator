@@ -74,6 +74,7 @@ namespace XB1ControllerBatteryIndicator
                     {
                         TooltipText = $"Controller {_controller.UserIndex} - Battery level: {batteryInfo.BatteryLevel}";
                         ActiveIcon = $"Resources/battery_{batteryInfo.BatteryLevel.ToString().ToLower()}.ico";
+                        batteryWin.UpdateImage($"battery_{ batteryInfo.BatteryLevel.ToString().ToLower()}");
                         if (batteryInfo.BatteryLevel == BatteryLevel.Empty)
                         {
                             if (balloon_shown == false)
@@ -98,6 +99,7 @@ namespace XB1ControllerBatteryIndicator
                 {
                     TooltipText = $"No controller detected";
                     ActiveIcon = $"Resources/battery_unknown.ico";
+                    batteryWin.UpdateImage($"battery_unknown.ico");
                 }
                 Thread.Sleep(1000);
             }
